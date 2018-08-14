@@ -1,0 +1,23 @@
+//快速排序：O(nlogn)
+//比其他排序都快，而且快排占用的空间少，但是快拍不稳定，对于相同的数字，排序后可能会颠倒次序。
+void QuickSort(int array[],int left,int right){
+  int last;
+  if(left>=right)return;       
+  int rand=(left+right)/2;     //取半
+  Swap(array,left,rand);       //比较
+  last=left;                   //赋值  la=le
+  for(int i=left+1;i<=right;i++)    //for循环
+  {
+    if(array[i]>array[left]
+    Swap(array,++last,i);
+  }
+  Swap(array,left,last);       //le 与la 换回来
+  QuickSort(array,left,last-1);
+  QuickSort(array,last+1,right);
+}
+
+void Swap(int array[],int i,int j){
+  int temp=array[i];
+  array[i]=array[j];
+  array[j]=temp;
+}
